@@ -1,0 +1,81 @@
+
+import type { Kudos, User } from '@/lib/types';
+
+export const mockUsers: User[] = [
+  { id: 'u1', name: 'Alice Johnson', avatarUrl: 'https://placehold.co/100x100/EFEFEF/333333?text=AJ', team: 'Engineering', role: 'EMPLOYEE' },
+  { id: 'u2', name: 'Bob Williams', avatarUrl: 'https://placehold.co/100x100/EFEFEF/333333?text=BW', team: 'Marketing', role: 'EMPLOYEE' },
+  { id: 'u3', name: 'Charlie Brown', avatarUrl: 'https://placehold.co/100x100/EFEFEF/333333?text=CB', team: 'Sales', role: 'MANAGER' },
+  { id: 'u4', name: 'Diana Prince', avatarUrl: 'https://placehold.co/100x100/EFEFEF/333333?text=DP', team: 'Engineering', role: 'EMPLOYEE' },
+  { id: 'u5', name: 'Ethan Hunt', avatarUrl: 'https://placehold.co/100x100/EFEFEF/333333?text=EH', team: 'HR', role: 'HR' },
+];
+
+export let mockKudos: Kudos[] = [
+  {
+    id: 'k1',
+    sender: mockUsers[1],
+    recipient: mockUsers[0],
+    message: 'Amazing work on the new feature launch! Your dedication made it a huge success.',
+    emojis: ['🚀', '🎉'],
+    privacy: 'PUBLIC',
+    timestamp: '2024-07-30T10:00:00Z',
+    likes: 15,
+    comments: [
+      { id: 'c1', author: mockUsers[3], message: 'Totally agree!', timestamp: '2024-07-30T10:05:00Z' },
+    ],
+  },
+  {
+    id: 'k2',
+    sender: mockUsers[2],
+    recipient: mockUsers[3],
+    message: 'Thanks for helping me with the client presentation. Your insights were invaluable.',
+    emojis: ['🙏', '🤝'],
+    privacy: 'PUBLIC',
+    timestamp: '2024-07-30T09:30:00Z',
+    likes: 8,
+    comments: [],
+  },
+  {
+    id: 'k3',
+    sender: mockUsers[0],
+    recipient: mockUsers[4],
+    message: 'Welcome to the team! We are so excited to have you.',
+    emojis: ['👋', '😊'],
+    privacy: 'PUBLIC',
+    timestamp: '2024-07-29T15:45:00Z',
+    likes: 22,
+    comments: [],
+  },
+  {
+    id: 'k4',
+    sender: { ...mockUsers[0], name: 'Anonymous' },
+    recipient: mockUsers[1],
+    message: 'Great presentation today!',
+    emojis: ['👏'],
+    privacy: 'ANONYMOUS',
+    timestamp: '2024-07-29T12:00:00Z',
+    likes: 5,
+    comments: [],
+  },
+  {
+    id: 'k5',
+    sender: mockUsers[3],
+    recipient: mockUsers[0],
+    message: 'Your refactoring of the user authentication service was a masterpiece of clean code. Great job!',
+    emojis: ['💻', '✨'],
+    privacy: 'PUBLIC',
+    timestamp: '2024-07-28T18:00:00Z',
+    likes: 12,
+    comments: [],
+  },
+  {
+    id: 'k6',
+    sender: mockUsers[4],
+    recipient: mockUsers[2],
+    message: "You crushed your sales quota this quarter! It's inspiring to see.",
+    emojis: ['🎯', '🔥'],
+    privacy: 'PUBLIC',
+    timestamp: '2024-07-28T11:20:00Z',
+    likes: 30,
+    comments: [],
+  },
+];
